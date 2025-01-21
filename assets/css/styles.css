@@ -1,0 +1,75 @@
+.blob {
+  --size: 800px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 999px;
+  background: #f7e6d9;
+  filter: blur(180px);
+}
+
+/* ========================================= navbar styles start ========================================= */
+.navbar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.navbar .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.nav-menu{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 600px;
+  width: 100%;
+  justify-content: space-between;
+}
+.nav-menu .nav-link{
+  position: relative;
+  font-family: var(--font-lato);
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.nav-menu .nav-link .nav-link-outliner{
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+.nav-menu .nav-link.active .nav-link-outliner{
+  display: inline-block;
+}
+/* ========================================= navbar styles end ========================================= */
+
+/* ========================================= banner section styles start ========================================= */
+.banner-section{
+  position: relative;
+  min-width: 100vh;
+  overflow: hidden;
+}
+.banner-section .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.banner-section .blob.left-blob {
+  top: -50%;
+  left: -50%;
+}
+.banner-section .blob.right-blob {
+  bottom: -50%;
+  right: -50%;
+}
+/* ========================================= banner section styles end ========================================= */

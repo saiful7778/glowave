@@ -1,8 +1,61 @@
 /* ======================================= Global component styles ======================================= */
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+
+  --accent-pri: #45726c;
+
+  --ring-color: #45726c;
+  --ring-offset-width: 2px;
+  --ring-offset-color: #ffffff;
+
+  --font-mollie-glaston: "Mollie glaston", sans-serif;
+  --font-lato: "Lato", serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-lato);
+}
+
+/* ======================================= Scrollbar styles start ======================================= */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-pri);
+  border-radius: 5px;
+}
+* {
+  scrollbar-width: 10px;
+  scrollbar-color: var(--accent-pri) transparent;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* ======================================= Scrollbar styles end ======================================= */
 
 /* ======================================= Container styles start ======================================= */
 .container {
   width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (min-width: 375px) {
   .container {
@@ -40,3 +93,41 @@
   }
 }
 /* ======================================= Container styles end ======================================= */
+
+/* ======================================= Button styles start ======================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  outline: none;
+  padding: 16px 24px;
+
+  font-family: var(--font-lato);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 999px;
+}
+.btn:focus-visible {
+  box-shadow: inset 0 0 0 var(--ring-offset-width, 0px)
+      var(--ring-offset-color, transparent),
+    inset 0 0 0 calc(2px + var(--ring-offset-width, 0px))
+      var(--ring-color, transparent),
+    var(--shadow, 0 0 transparent);
+}
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+.btn-pri {
+  color: #fff;
+  background-color: var(--accent-pri);
+}
+.btn-outline {
+  border: 1px solid #000000;
+  color: #000000;
+}
+/* ======================================= Button styles end ======================================= */
